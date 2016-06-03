@@ -1,4 +1,4 @@
-# Leren programmeren
+# Leren programmeren in Scratch op de Arduino
 
 
 ***Programmeer een verkeerslicht installatie op de Arduino***
