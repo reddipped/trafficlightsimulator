@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>Leren programmeren</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; 
+  color: #323232;
+}
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  color: #323232;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; 
+}
+
+h2 tt, h2 code {
+  font-size: inherit;
+ }
+
+h3 tt, h3 code {
+  font-size: inherit;
+ }
+
+h4 tt, h4 code {
+  font-size: inherit;
+}
+
+h5 tt, h5 code {
+  font-size: inherit;
+ }
+
+h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+   }
+
+h2 {
+  font-size: 24px;
+
+
+border-: 5px solid #fb0000;
+border-bottom: 5px solid #c70000;
+
+border-width: 0 0 3px 0;
+-webkit-border-image: 
+    -webkit-gradient(linear, 100% 0, 0 0, from(#fb0000), to(#c70000)) 100% 1;
+-webkit-border-image: 
+    -webkit-linear-gradient(left, #fb0000, #c70000) 100% 1;
+-o-border-image:
+         -o-linear-gradient(left, #fb0000, #c70000) 100% 1;
+-moz-border-image:
+       -moz-linear-gradient(left, #fb0000, #c70000) 100% 1;  
+   }
+
+h3 {
+  font-size: 18px;
+   }
+
+h4 {
+  font-size: 16px;
+    }
+
+h5 {
+  font-size: 14px;
+   }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+	position:relative;
+  left:-4px;
+  margin-top: 0;
+  padding-top: 2px; 
+  padding-left: 4px; 
+  padding-right: 4px; 
+  padding-bottom: 2px; 
+  border: 0;
+  color: #ffffff;
+  background: -webkit-linear-gradient(left, #fb0000, #c70000); /* For Safari 5.1 to 6.0 */ ;
+  background: -o-linear-gradient(right, #fb0000, #c70000); /* For Opera 11.1 to 12.0 */ ;
+  background: -moz-linear-gradient(right, #fb0000, #c70000); /* For Firefox 3.6 to 15 */ ;
+  background: linear-gradient(to right, #fb0000, #c70000); /* Standard syntax */ ;
+}
+
+body > h1:first-child:after {
+	position: absolute;
+	bottom: 2px ;
+	font-size: 10px;
+	right:2px;
+	content: "reddipped.com";
+}
+
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Leren programmeren</h1>
+
+<p><strong><em>Programmeer een verkeerslicht installatie op de Arduino</em></strong></p>
+
+<p><img src="./img/ArduinoNano.jpg" alt=""></p>
+
+<h2 id="toc_1">De Arduino</h2>
+
+<h3 id="toc_2">Wat is een Arduino</h3>
+
+<p>De Arduino (spreek uit als ardwieno) is een kleine computer waarmee je door signalen dingen kunt besturen. De Arduino kan signalen waarnemen zoals jij met je zintuigen (oren, neus, ogen) doet of signalen sturen (mond, handen). De Arduino kan met twee soorten electrische signalen werken; digitale signalen en analoge signalen. </p>
+
+<p>Digitale signalen kennen maar twee verschillende waarden, aan of uit, net zoals een lamp welke met de schakelaar wordt bediend. De lamp kan aan of uit. Voor deze waarden worden verschillende benamingen gebruikt. De waarde <strong>aan</strong> wordt ook wel eens ‘<strong>1</strong>’ of ‘<strong>hoog</strong>’ genoemd. Voor <strong>uit</strong> gebruikt men hier ook wel ‘<strong>0</strong>’ of ‘<strong>laag</strong>’. Op een Arduino zitten kleine rondjes of pinnetjes waarmee je deze signalen kunt versturen of ontvangen. Bij deze rondjes staat een D met een cijfer, D2, D3 etc.
+<img src="./img/ArduinoNano.jpg" alt=""></p>
+
+<p>Analoge signalen kennen veel verschillende waarden, deze gaan van laag naar hoog. Je kunt dit het beste vergelijken met een dimmer van een lamp waarmee je de lamp minder of meer fel kunt laten branden. Bij een dimmer heb je oneindig veel verschillende waarden, maar bij een arduino is dit beperkt. De laagste waarde is 0 en de hoogste waarde is 255. Je hebt dus 256 verschillende waarden! De kleine rondjes of pinnetjes met een A en een cijfer, A1, A2, etc. worden gebruikt voor analoge signalen.</p>
+
+<h2 id="toc_3">De Simulator</h2>
+
+<p>Een echt verkeerslicht werkt met een computer en zorgt ervoor dat bij een kruispunt iedereen deze veilig kan passeren. Iedereen krijgt op het juiste moment een signaal dat hij mag rijden of moet stoppen zodat er geen botsingen plaatsvinden als iedereen zich aan de regels van het verkeerslicht houdt.</p>
+
+<p><img src="./img/simulation.gif" alt=""></p>
+
+<p>Een verkeerslicht systeem bestaat uit drie belangrijke onderdelen; De centrale computer, een melder zodat de computer weet wanneer er iemand op het kruispunt aankomt en het verkeerslicht die met drie lampen aangeeft of iemand mag gaan rijden (groen), moet gaan stoppen als het kan (oranje) of moet wachten (rood).</p>
+
+<p>De verkeerslicht simulator  bestaat ook uit deze drie onderdelen. De centrale computer (1) is een Arduino. Op deze computer worden de melders (2) en de lampen van de verkeerslichten aangesloten (3). </p>
+
+<p><img src="./img/trafficlight_components.png" alt=""></p>
+
+<p>Er zijn twee melders en twee verkeerslichten in de simulator. De melders zijn kleine schakelaartjes die aan of uit kunnen. Deze schakelaars heten &quot;reed relais&quot;, dit spreek je uit als <em>riet relè</em>. Een melder maakt verbinding wanneer een magneetje in de buurt van de melder komt. Onder de auto&#39;s die bij de simulator horen zitten kleine magneetjes. Hierdoor maakt de melder verbinding als er een auto voor het stoplicht staat.</p>
+
+<p><img src="./img/reed-switch.jpg" alt=""></p>
+
+<p>De melders en de lampen van de verkeerslichten worden aangesloten op een eigen aansluitpunt (poort) op de Arduino. De lampen en melders zijn aangesloten op de volgende punten op de Arduino</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">Arduino</th>
+<th style="text-align: left">Verbinding</th>
+<th style="text-align: left">Straat</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">D2</td>
+<td style="text-align: left">Verkeerslicht Rood</td>
+<td style="text-align: left">1st Street</td>
+</tr>
+<tr>
+<td style="text-align: left">D3</td>
+<td style="text-align: left">Verkeerslicht Oranje</td>
+<td style="text-align: left">1st Street</td>
+</tr>
+<tr>
+<td style="text-align: left">D4</td>
+<td style="text-align: left">Verkeerslicht Groen</td>
+<td style="text-align: left">1st Street</td>
+</tr>
+<tr>
+<td style="text-align: left">D5</td>
+<td style="text-align: left">Verkeerslicht Melder</td>
+<td style="text-align: left">1st Street</td>
+</tr>
+<tr>
+<td style="text-align: left">D6</td>
+<td style="text-align: left">Verkeerslicht Rood</td>
+<td style="text-align: left">2nd Street</td>
+</tr>
+<tr>
+<td style="text-align: left">D7</td>
+<td style="text-align: left">Verkeerslicht Oranje</td>
+<td style="text-align: left">2nd Street</td>
+</tr>
+<tr>
+<td style="text-align: left">D8</td>
+<td style="text-align: left">Verkeerslicht Groen</td>
+<td style="text-align: left">2nd Street</td>
+</tr>
+<tr>
+<td style="text-align: left">D9</td>
+<td style="text-align: left">Verkeerslicht Melder</td>
+<td style="text-align: left">2nd Street</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="./img/arduino_pinlayout.png" alt=""></p>
+
+<h2 id="toc_4">Scratch</h2>
+
+<p>Om een computer te vertellen wat hij moet doen geef je hem opdrachten of instructies. Jij gaat dit voor het verkeerslicht doen in de programmeertaal Scratch 2.0. </p>
+
+<h2 id="toc_5">mBlock</h2>
+
+<p>Met programma mBlock kun je programma&#39;s in Scratch schrijven en laten werken met een Arduino. Als je programma helemaal af is kun je deze op de Arduino zelf zetten en kan deze dan zonder de computer waarop je je programma aan het schrijven bent laten uitvoeren.</p>
+
+<p>Voordat je verder gaat, zorg dan dat je mBlock geinstalleerd hebt. Je kunt mBlock downloaden op <a href="">http://www.mblock.cc</a>. Als je mBlock hebt geinstalleerd, sluit je computer dan met een USB kabel aan op de Arduino.</p>
+
+<p>Als je mBlock voor de eerste keer opstart moet je een aantal instellingen in mBlock wijzigen.
+Zet als eerste de <strong>Arduino</strong> extensie aan door in de menubalk onder <strong><em>Extensies</em></strong> de exensie <strong><em>Arduino</em></strong> te selecteren. Om de juiste instructies naar de Arduino te sturen moeten we aangeven welk type Arduino er is aangesloten op de computer. Kies in de menubalk onder <strong><em>boards</em></strong> voor de <strong><em>Arduino Nano (mega328)</em></strong>.</p>
+
+<p>Als laatste moet er aangegeven worden hoe de computer is aangesloten op de Arduino. Dit verschilt per computer en fabrikant van de Arduino. Het eenvoudigst om te bepalen op welke manier de Arduino is aangesloten is door de USB kabel uit de computer te verwijderen. Ga dan in het menubalk van mBlock naar <strong><em>Verbinden -&gt; Seriële Poort</em></strong> poort en noteer welke poorten er getoond worden. Sluit nu de USB kabel aan op de computer en kijk nogmaals welke poorten er getoond worden. Als het juist is wordt er een extra poort getoond, kies deze poort om mBlock met de Arduino te verbinden. Iedere keer dat je de Arduino opnieuw op de computer aansluit zul je de poort opnieuw moeten verbinden. </p>
+
+<h2 id="toc_6">Opdrachten</h2>
+
+<h3 id="toc_7">Opdracht 1 je eerste programma</h3>
+
+<p>Als je mBlock hebt gestart zie je dat het programma verdeeld is in verschillende vlakken. Het vlak links bovenin waar de panda beer staat heet het <em>podium</em>. Op het podium wordt net zoals in het echt de uitvoering getoond. In mBlock wordt hier de uitvoering van het programma getoond. </p>
+
+<p>Het podium heeft nog geen achtergrond, je kunt een achtergrond kiezen door het <strong><em>nieuwe achtergrond icoon</em></strong> te selecteren en uit de lijst een nieuwe achtergrond toe te voegen. Op het podium staat Panda. Panda kun je vervangen door een ander figuur of je kunt meerdere figuren toevoegen. Onder het podium zie je de figuren die je geselecteerd hebt en iets op het podium kan laten doen. Wil je een nieuw figuur toevoegen, kies dan het <strong><em>nieuw figuur</em></strong> icoon boven lijst met figuren. Een figuur heet ook wel <strong><em>sprite</em></strong>. Elk figuur kan ook een of meer kostuums hebben. Een kostuum is een andere vorm van het gekozen plaatje, dus het kunnen andere kleren zijn zoals in het echt maar ook een andere houding van een poppetje. Als je het tabje <strong><em>Kostuums</em></strong> kiest zie je welke kostuums er voor het plaatje gekozen kunnen worden. </p>
+
+<p>Net als in het theater wordt er op het podium een uitvoering gespeeld. Wat er wordt gespeeld staat in het script. In het script staat opgeschreven wie wanneer wat zegt en wat er gedaan moet worden. In mBlock kun je het tab scripts selecteren waarmee je kunt aangeven wat er gedaan, gezegd of afgespeeld moet worden. De taal waarin jij dit gaat doen heet Scratch. Door deze stukjes van het script achter elkaar te zetten krijg je een Scratch programma. </p>
+
+<p><img src="./img/mBlock_Stage.png" alt=""></p>
+
+<p>We gaan nu proberen een raket op te laten stijgen vanaf de maan! </p>
+
+<h4 id="toc_8">Het klaarzetten van het podium en de figuren</h4>
+
+<ol>
+<li>Verwijder Panda, klik met de rechtermuisknop op Panda en kies <strong><em>verwijderen</em></strong></li>
+<li>Kies een nieuwe achtergrond, zoek de achtergrond <strong><em>moon</em></strong></li>
+<li>Kies een sprite, kies de sprite <strong><em>Spaceship</em></strong></li>
+<li>Als het figuur van de raket nu op het podium staat, zorg dan dat deze aan de onderkant van het podium staat. Net alsof hij op de maan geland is.</li>
+<li>De raket heeft nog een ander kostuum, kies dit andere kostuum zodat het landinggestel van de raket geopend is.</li>
+</ol>
+
+<p>Als je dit allemaal goed hebt gedaan ziet het er nu ongeveer zo uit.</p>
+
+<p><img src="./img/task_1_mBlock_Stage.png" alt=""></p>
+
+<h4 id="toc_9">Het schrijven van het script (programma)</h4>
+
+<p>Het podium en het figuur zijn nu klaar, tijd voor het script ! Een script noemen we ook wel programma of computer programma. Hiermee vertellen we de computer wat hij moet doen. </p>
+
+<ol>
+<li>Ga naar het tabje <strong><em>Scripts</em></strong></li>
+<li>Zoals je ziet zijn de scripts opgedeeld in verschillende groepjes. Ieder groepje heeft zijn eigen kleur. Je zult straks zien dat hier hierdoor makkelijker wordt om Scripts voor je programma te vinden. Kies nu de groep <strong><em>Gebeurtenissen</em></strong>. Je ziet nu een aantal gebeurtenissen die je in je programma kunt zetten. Kies de gebeurtenis <strong><em>Wanneer (groen vlaggetje) wordt aangeklikt</em></strong> en sleep deze naar het programma gedeelte.<br></li>
+<li>We gaan de raket laten bewegen ! Ga naar de groep <strong><em>Beweging</em></strong> en sleep <strong><em>wijzig y naar 0</em></strong> naar het programma. Sleep dit onder het blokje <strong><em>Wanneer (groen vlaggetje) wordt aangeklikt</em></strong> zodat het als een puzzelstukje hieraan klikt.</li>
+<li>In het nieuwe script dat je aan het programma hebt gevoegd staat een getal 0, verander dit getaal naar -85. Dit zorgt ervoor dat de raket bij het starten van het programma geland is.</li>
+<li>Open nu groepje <strong><em>Bediening</em></strong> en sleep het script <strong><em>herhaal 10</em></strong> naar het programma. Plak dit weer onder het laatste stukje van het programma. In <strong><em>herhaal 10</em></strong> kun je op twee plekken een stukje script plakken. Onderaan en in het midden van <strong><em>herhaal 10</em></strong>. Als je een script in het midden toevoegd zal dit straks meer keer herhaald worden. Evenveel keer als het getal dat in <strong><em>herhaal 10</em></strong> keer staat. Verander dit getal nu naar 15.</li>
+<li>Ga weer naar het groepje beweging en sleep het script <strong><em>wijzig y met 10</em></strong> in het midden van <strong><em>herhaal 15</em></strong>. Het script <strong><em>wijzig y met 10</em></strong> wordt dus straks 15 keer uitgevoerd.</li>
+<li>Ga nu verder met wat je geleerd hebt totdat het programma er zo uit ziet als hieronder afgebeeld. Gebruikt de kleuren om het groepje te vinden waarin de scripts staan.<br>
+<img src="./img/task_1_1.png" alt=""></li>
+<li>Klik nu met de muis op <strong><em>Wanneer (groen vlaggetje) wordt aangeklikt</em></strong>. </li>
+</ol>
+
+<p>Jouw raket stijgt op en landt weer!</p>
+
+<h3 id="toc_10">Opdracht 2 variabelen gebruiken</h3>
+
+<p>Computerprogramma&#39;s maken gebruik laatjes waarin je iets in kunt stoppen. Je kunt er ook in kijken om te zien wat er in zit of er iets uithalen. Zo&#39;n laatje noemen we een variabele. In een variabele kunnen je geen echte dingen stoppen maar een getal of tekst.</p>
+
+<p>Je kunt in computerprogramma&#39;s ook beslissen of je iets wel of niet doet. Die beslissing noemen ze een conditie of voorwaarde. Bijvoorbeeld <em>als</em> je trek hebt <em>dan</em> ga je iets eten. Een computer kent alleen <strong>waar</strong> of <strong>niet waar</strong> voor een conditie. Dus in het voorbeeld heb je trek of geen trek, een computer kent niet <em>ik heb lekkere trek, in een Snicker</em>. Wat je gaat doen als een conditie waar is noem je de actie. Je kunt ook een conditie gebruiken met een variabele, bijvoorbeeld <em>als</em> de variabele de waarde <em>9</em> bevat <em>dan</em> gaan we iets doen. </p>
+
+<p>In deze opdracht ga je het spelletje &#39;raad het getal&#39; schrijven. Het getal dat je moet raden wordt opgeslagen in een variabele, de variabele <strong><em>getal</em></strong>.</p>
+
+<ol>
+<li>Start een nieuw programma door het menu <strong><em>Bestand</em></strong> en dan <strong><em>Nieuw</em></strong> te kiezen.</li>
+<li>Maak een variabele <strong><em>getal</em></strong>. Ga naar <strong><em>Scripts</em></strong> en dan naar <strong><em>Data&amp;Blokken</em></strong>. Kies dan <strong><em>Maak een Variabele</em></strong>. Maak een nieuwe variabele <strong><em>getal</em></strong>.  Je hebt nu een variabele waarin je iets kunt bewaren.</li>
+<li>Maak nu het programma zoals in het plaatje hier onder is afgebeeld.
+<img src="./img/task_2_1.png" alt=""></li>
+</ol>
+
+<p>Wat doet dit programma denk je ? Bij regel <em>05</em> verzint de computer een getal van 1 tot 10. Dit getal wordt in de variabele <strong><em>getal</em></strong> gezet. Je kunt nu de variabele gebruiken in een voorwaarde. Op regel <em>07</em> wordt de waarde in variabele <strong><em>getal</em></strong> vergeleken met de waarde in variabele <strong><em>Antwoord</em></strong> Het programma blijft een stukje herhalen totdat de waarde in variabele <strong><em>Antwoord</em></strong> gelijk is aan de waarde in variabele <strong>getal</strong>. Op regel <em>08</em> wordt om een getal gevraagd dat je moet invoeren. Dan volgt er op regel <em>09</em> weer een voorwaarde. Als het ingevoerde getal in de variabele <strong><em>Antwoord</em></strong> niet gelijk is aan het door de computer verzonnen getal zal het figuur zeggen dat het antwoord niet goed is. Dit gebeurt door de opdracht <strong><em>zeg</em></strong> op regel <em>10</em>.</p>
+
+<p>Maar die laatste voorwaarde is wel een beetje vreemd, is het niet? Er staat &#39; <em>&quot;niet&quot; antwoord = getal</em> &#39; Wat betekent dit nu eigenlijk ? Als de computer in variabele <strong><em>getal</em></strong> &quot;5&quot; heeft gezet en <strong><em>Antwoord</em></strong> was &quot;6&quot;. Dan is antwoord niet gelijk aan getal en is de voorwaarde dus &quot;niet waar&quot;. Maar in de voorwaarde stond niet &#39; <em>Antwoord = getal</em> &#39; maar &#39; <em>&quot;niet&quot; Antwoord = getal</em> &#39;. Er staat dus &#39; <em>&quot;niet&quot; niet waar</em> &#39;, en dat is  <em>waar</em>. Dus als het Antwoord niet gelijk is aan getal is de voowaarde <em>waar</em>. Het gedeelte in het programma bij het gele balonnetje <strong>4</strong> zorgt er dus voor dat het programma iets zegt als <em>Antwoord</em> niet gelijk is aan <em>getal</em>.</p>
+
+<p>Start het programma door op de Panda te klikken en probeer het uit. Je kunt altijd zien welk getal er in een variabele zit. Naast de Panda staan de variabelen en de waarde die daarin opgeslagen zit. Probeer hiermee eens in één keer het juiste getal te raden!</p>
+
+<p><img src="./img/task_2_Panda_Stage.png" alt=""></p>
+
+<p>Probeer nu het programma aan te passen zodat je maar drie keer mag proberen om het getal te raden. Maak eerst een variabele <strong><em>pogingen</em></strong> en wijzig deze variabele naar 0. Zorg dan dat iedere keer als je een poging hebt gedaan er 1 bij de variabele <strong><em>pogingen</em></strong> wordt opgeteld (met één gewijzigd wordt). Als laatste moet je een conditie maken die zorgt dat het programma stopt, met <strong><em>stop alles</em></strong>, als je meer dan drie keer een poging hebt gedaan om het getal te raden.</p>
+
+<p>Lukt het echt niet ? Kijk dan bij de antwoorden!</p>
+
+<h3 id="toc_11">Opdracht 3 De Arduino programmeren</h3>
+
+<h4 id="toc_12">Initialiseren van de variabelen</h4>
+
+<p>Met mBlock kun je niet alleen programma&#39;s op je eigen computer schrijven. Je kunt ook programma&#39;s schrijven voor kleine computertjes welke ook in robots gebruikt worden, Arduino&#39;s. In deze opdracht ga jij je eerste programma maken en deze op de Arduino uitvoeren. </p>
+
+<p>Begin deze opdracht met het openen van het programma <strong><em>trafficlight_start.sb2</em></strong>. Dit is de basis voor alle verkeerslicht programma&#39;s.</p>
+
+<p><img src="./img/task_3_init.png" alt=""></p>
+
+<p>Het linker gedeelte van het programma wordt opgestart als het een signaal met de naam <em>initialize</em> ontvangt. Het stelt verschillende variabelen in, voor elke lamp en sensor één. Deze variabelen krijgen de waarde van de poort waarop de lamp of sensor is aangesloten. Hierdoor kun je variabelen gebruiken om een lamp aan of uit te zetten en hoef je niet elke keer te onthouden op welke poort de groene lamp van het stoplicht op 1st Street is aangesloten. Het tweede gedeelte van dit gedeelte van het programma gebruikt deze variabelen om de poorten laag (0) te maken. Dit zorgt ervoor dat als het programma start, alle lampen uit gaan.</p>
+
+<p>Het rechter gedeelte van het programma is het startpunt van jouw programma. Het stuurt een <em>initialize</em> signaal zodat het linker gedeelte van het programma wordt gestart en wacht dan 2 seconden. Jouw eigen programma maak je door instructies na de <em>wacht 2 seconden</em> instructie toe te voegen.</p>
+
+<h4 id="toc_13">Een knipperlicht maken</h4>
+
+<p>We beginnen eenvoudig door de groene lamp van het verkeerslicht op 1st te laten knipperen. </p>
+
+<ul>
+<li>Sleep <strong><em>herhaal voor altijd</em></strong> onder de Scripts groep <strong><em>Bediening</em></strong> naar de onderzijde van <strong><em>wacht 2 seconden</em></strong></li>
+<li>Sleep nu <strong><em>stel digitale pin 9 output in als HOOG</em></strong> onder de Scripts groep <strong><em>Robots</em></strong> naar <strong><em>herhaal voor altijd</em></strong></li>
+<li>Onder <strong><em>Data&amp;Blokken</em></strong> staat een variabele <strong><em>lamp<em>green</em>1st</em></strong>. Sleep deze variabele over het witte rondje met de <strong><em>9</em></strong> in de instructie <strong><em>stel digitale pin 9 output in als HOOG</em></strong>. Dit witte rondje geeft aan welke poort op de Arduino gewijzigd moet worden. Door een variable in dit witte rondje te slepen wordt de waarde in de variabele gebruikt om aan te geven welke poort gewijzigd moet worden. </li>
+<li>Sleep <strong><em>wacht 1</em></strong> onder de Scripts groep <strong><em>Bediening</em></strong>  onder de laatste toegevoegde instructie</li>
+<li>Klik nu met de rechtermuisknop op instructie <strong><em>stel digitale pin lamp<em>green</em>1st output in als HOOG</em></strong>. Je krijgt nu een menu te zien dat bij de instructie hoort. Kies <strong><em>dupliceren</em></strong>. Je hebt nu een kopie van de instructies <strong><em>stel digitale pin lamp<em>green</em>1st output in als HOOG</em></strong> en <strong><em>wacht 1 seconde</em></strong>. Sleep de kopie van deze instructies onder de eerste instructie <strong><em>wacht 1 seconde</em></strong>.</li>
+<li>Verander een van de twee instructies <strong><em>stel digitale pin lamp<em>green</em>1st output in als HOOG</em></strong> naar <strong><em>stel digitale pin lamp<em>green</em>1st output in als LAAG</em></strong></li>
+</ul>
+
+<p>Als het goed is ziet je programma er nu ongeveer zo uit. Als dit klopt, start het programma dan door op <strong><em>Wanneer (groen vlaggetje) wordt aangeklikt</em></strong> te klikken. Als het allemaal goed gaat zal het groene licht van het verkeerslicht op 1st Street gaan knipperen. Lukt het niet, open dan het programma <em>task_3_1.sb2</em></p>
+
+<p><img src="./img/task_3_1.png" alt="task_3_1"></p>
+
+<h4 id="toc_14">Een looplicht maken</h4>
+
+<p>Een looplicht is een rij van lampjes waarbij alle lampjes één voor één aan en uitgaan. Hierdoor lijkt het of het lampje vooruit loopt. Kun je nu proberen om van het verkeerslicht op <em>1st Street</em> de lampen één voor één aan en uit te laten gaan?</p>
+
+<p>Ben je klaar? Probeer dan het programma te starten en kijk of het werkt.</p>
+
+<p>Waarschijnlijk zul je een programma hebben gebouwd dat veel lijkt op het programma in hoofdstuk <em>Antwoorden, task_3_2.sb2 een eenvoudig looplicht</em>. Maar stel dat je in plaats van de lampen van één verkeerslicht alle lampen één voor één wilt laten branden. Dus niet alleen de lampen van de twee verkeerslichten maar ook de lampen van de sensors die in de weg zitten. Als je dit zou willen doen met het programma <em>task_3_2.sb2</em> dan zou het programma veel langer worden en moeilijker aan te passen. Dit moet toch slimmer kunnen ?!</p>
+
+<h4 id="toc_15">Een langer looplicht</h4>
+
+<p>Je kunt programma om de lampen van het verkeerslicht op 1st Street één voor één aan en uit te laten gaan ook anders schrijven. Zoals het voorbeeld <em>task_3_3.sb2</em> zoals hieronder getoond. </p>
+
+<p><img src="./img/task_3_3.png" alt="task_3_3.sb2"></p>
+
+<p>In het voorbeeld hierboven gebruiken we de variabele <strong><em>lamp</em></strong>. We geven de variabele <strong><em>lamp</em></strong> op regel 04 dezelfde waarde als in variabele <strong><em>lamp_green_1st</em></strong>. Dit noemt men ook welk <em>toekennen</em>, de waarde van <strong><em>lamp_green_1st</em></strong> wordt toegekend aan <strong><em>lamp</em></strong>. De variabele <strong><em>lamp_green_1st</em></strong> heeft door het versturen van het bericht <strong><em>initialize</em></strong> de waarde &quot;4&quot; gekregen. De variabele <strong><em>lamp</em></strong> heeft dus op regel 4 nu ook de waarde &quot;4&quot; gekregen.</p>
+
+<p>De instructie &quot;herhaal voor altijd&quot; op regel 05 en &quot;als&quot; op regel 06 slaan we even over, hier komen we later op terug. Op regel 07 stellen we een digitale pin in op hoog waardoor een led lampje dat op de digitale pin is aangesloten gaat branden. Welke digitale pin ingesteld wordt staat in variabele <strong><em>lamp</em></strong>. Als het programma opstart gaat dus het led lampje aangesloten op digitale pin 4 branden omdat de variabele <strong><em>lamp</em></strong> de waarde &quot;4&quot; heeft. Dit is de groene lamp van het verkeerslicht op 1st street.</p>
+
+<p>Op regel 08 wachten we een seconde waarna we op regel 09 dezelfde led lamp uitzetten door de output <strong><em>LAAG</em></strong> te maken. 
+Op regel 10 gaan we de waarde van de variabele <strong><em>lamp</em></strong> aanpassen. We geven de variabele <strong><em>lamp</em></strong> de waarde van <strong><em>lamp</em></strong> min één. De variabele <strong><em>lamp</em></strong> verandert dus van 4 naar 3. De volgende keer dat regel 07, 08 en 09 door het programma gevolgd wordt staat er in de variabele <strong><em>lamp</em></strong> een andere waarde. Er gaat dan dus een ander led lampje aan en uit. Dit is het led lampje aangesloten op digitale poort 3, het oranje lampje van het verkeerslicht op 1st street. </p>
+
+<p>Elke keer nu dat regel 07 tot en met 10 worden aangeroepen wordt er een andere led lamp aan en uit gezet. Dit herhalen gebeurt door de instructie <strong><em>herhaal voor altijd</em></strong> op regel 05. Omdat bij iedere herhaling de waarde in variabele <strong><em>lamp</em></strong> met 1 wordt verlaagd wordt de waarde alleen maar kleiner. De rode lamp van verkeerslicht op 1st street heeft de laagste waarde van de digitale poorten. Dus als deze lamp door het programma is aan en uitgegaan zouden we willen dat er weer wordt begonnen met de eerste led lamp die we met het programma hebben laten knipperen.</p>
+
+<p>Op regel 12 geven we de variabele <strong><em>lamp</em></strong> weer de waarde zoals deze bij het starten kreeg op regel 04. Maar alleen als er aan een voorwaarde wordt voldaan, als de waarde van <strong><em>lamp</em></strong> kleiner wordt dan de waarde van variabele <strong><em>lamp_red_1st</em></strong>. De variabele <strong><em>lamp_red_1st</em></strong> heeft de laagste waarde van de digitale poorten waarop een led lamp is aangesloten. Deze voorwaarde staat op regel 06. Als de waarde van de variabele <strong><em>lamp</em></strong> groter of gelijk is aan de waarde in variabele <strong><em>lamp_red_1st</em></strong> wordt de lamp aan en uit gezet. Als niet aan deze voorwaarde wordt voldaan, wordt de waarde van <strong><em>lamp</em></strong> weer gelijkt gemaakt aan de waarde in variabele <strong><em>lamp_red_1st</em></strong>.</p>
+
+<p>Nu je een beetje weet hoe dit programma werkt kun je proberen om het programma een beetje aan te passen. Pas het programma zo aan dat alle led lampjes, dus ook de lampje van de sensors als één lang looplicht werken. Een tip, je hoeft maar 2 keer dezelfde wijziging te maken in het programma.</p>
+
+<p>Lukt het niet, kijk dan bij voorbeeld <em>task_3_4.sb2 een langer looplichtt</em> in hoofdstuk <em>Antwoorden</em>.</p>
+
+<h3 id="toc_16">Opdracht 4 één verkeerslicht</h3>
+
+<p>In deze opdracht ga je één verkeerslicht helemaal werkend maken! Dit verkeerslicht moet altijd op rood staan, behalve als er een auto voor staat te wachten. Dan moet het verkeerslicht eerst op oranje om vervolgens naar groen te gaan. Na een tijdje moet het verkeerslicht weer via oranje naar rood verspringen. We beginnen met de sensor die kan zien of een auto voor het verkeerslicht staat. Laad het programma <em>task_4_1.sb2</em> en start het.</p>
+
+<p><img src="./img/task_4_1.png" alt="task_4_1.sb2"></p>
+
+<p>Zoals je ziet denkt de Panda de hele tijd aan &#39;0&#39;. Weet jij waarom hij de hele tijd aan &#39;0&#39; denkt ?</p>
+
+<p>Het programma leest elke keer een digitale pin. Welke digitale pin dat is staat in variabele <strong><em>sensor_1st</em></strong>. In variabele <strong><em>sensor_1st</em></strong> staat de waarde <strong><em>5</em></strong>. Het programma leest dus de hele tijd de waarde van pin 5. De gelezen waarde wordt dan getoond door dit Panda te laten denken.</p>
+
+<p>Laat nu een auto rijden tot aan het stoplicht van 1st Street totdat het groene lampje in de weg gaat branden. Het groene lampje in de weg laat zien dat de sensor ziet dat er een auto staat. Wat denkt Panda nu ?</p>
+
+<p>De pin 5 op de Arduino is een digitale pin. Deze pin kent dus maar twee waarden! De pin is &#39;0&#39; als de sensor geen auto ziet, een &#39;1&#39; als hij wel een auto voor het verkeerslicht ziet.</p>
+
+<p>Probeer nu de lichten van het verkeerslicht te laten verspringen als er een auto staat de wachten. Laat de lichten van rood naar geel en groen verspringen. Wacht dan even en laat dan de lichten weer in omgekeerde volgorde verspringen totdat het licht op rood staat.</p>
+
+<p>Denk je dat het programma werkt, probeer het dan uit. Lukt het niet helemaal, probeer dan uit te zoeken wat er mis gaat. Door Panda te laten denken wat een waarde is of waar het programma is kun je er achter komen waar het misgaat. Een voorbeeld hoe je panda kunt laten denken welke waarde een variabele heeft of waar het programma is kun je hier onder zien. Dit zoeken naar fouten noemen we debuggen.</p>
+
+<p><img src="./img/task_4_2_debug.png" alt="task_4_2_debug.sb2"></p>
+
+<p>Je kunt in Scratch op nog een andere manier debuggen. Als je in naar <strong><em>data&amp;blokken</em></strong> in het tabje <strong><em>scripts</em></strong> gaat zie je kleine vierkantjes naast de variabelen staan. Als je op het vierkantje klikt verschijnt er een vinkje, of gaat het vinkje weg als het er al stond. Variabelen waar een vinkje staat worden op het podium getoond met de waarde die op dat moment in de variabele zit. Zo kun je als je een programma probeert te debuggen altijd de waarde zien die in de variabele zit.</p>
+
+<p><img src="./img/task_4_2_debug2.png" alt="task_4_2_debug2.sb2"></p>
+
+<p>Lukt het echt niet om je verkeerslicht goed werkend te krijgen? Kijk dan eens bij de antwoorden van Opdracht 4.</p>
+
+<h3 id="toc_17">Opdracht 5 twee verkeerslichten die samenwerken</h3>
+
+<p>In deze opdracht moet je in plaats van één stoplicht, twee stoplichten laten werken. Dit lijkt na opdracht 4 niet zo moeilijk, maar op een kruispunt mogen nooit twee verkeerslichten gelijktijdig op groen staan. Probeer nu een programma te schrijven dat ervoor zorgt dat beide verkeerslichten werken. Als in elke straat een auto voor het verkeerslicht staat mag er maar één op groen springen. Het andere verkeerslicht mag pas op groen springen als het eerste verkeerslicht op rood staat. </p>
+
+<p>Ook hier is er niet één goed antwoord. Begin je programma eenvoudig en breid het stukje bij beetje uit. Als iets niet werkt zoals je verwacht had, probeer dan te debuggen zoals in opdracht 4.</p>
+
+<p>Een antwoord met uitleg staat bij de antwoorden <strong><em>Opdracht 5, task_5_1.sb2 Voorbeeld 1</em></strong>*</p>
+
+<h1 id="toc_18">Antwoorden</h1>
+
+<h2 id="toc_19">Opdracht 2 variabelen</h2>
+
+<p>Er is niet één juist antwoord, je kunt de oplossing op verschillende manieren bouwen. Hieronder zie je twee van de vele mogelijkheden.
+Je kunt deze uitproberen door het programma <em>task<em>2</em>2.sb2</em> te laden en op een van de twee instructies <strong>wanneer op deze sprite is geklikt</strong> te klikken.</p>
+
+<p><img src="./img/task_2_2_answers.png" alt="task_2_2.sb2"></p>
+
+<h2 id="toc_20">Opdracht 3 De Arduino programmeren</h2>
+
+<h3 id="toc_21">task_3_1.sb2 een eenvoudig knipperlicht</h3>
+
+<p><img src="./img/task_3_1.png" alt="task_3_1.sb2"></p>
+
+<h3 id="toc_22">task_3_2.sb2 een eenvoudig looplicht</h3>
+
+<p><img src="./img/task_3_2.png" alt="task_3_1.sb2"></p>
+
+<h3 id="toc_23">task_3_3.sb2 een eenvoudig verbeterd looplicht</h3>
+
+<p><img src="./img/task_3_3.png" alt="task_3_3.sb2"></p>
+
+<h3 id="toc_24">task_3_4.sb2 een langer looplicht</h3>
+
+<p><img src="./img/task_3_4.png" alt="task_3_3.sb2"></p>
+
+<h2 id="toc_25">Opdracht 4 één verkeerslicht</h2>
+
+<p>Er is niet één goede oplossing voor deze opdracht, er zijn er heel veel. Hier worden twee oplossingen getoond. </p>
+
+<h3 id="toc_26">task_4_2.sb2 Voorbeeld 1</h3>
+
+<p>Omdat we alle programma&#39;s beginnen door het bericht <strong><em>initialize</em></strong> te sturen, gaan alle lichten uit. Dus we moeten hierna ervoor zorgen dat het rode licht brandt. Daarna wachten we tot de pin van de sensor een waarde &#39;1&#39; geeft.
+Vervolgens wordt de rode lamp uit gezet en het gele licht aan. Na even gewacht te hebben wordt het gele licht gedoofd en gaat het groene licht aan. 
+Omdat de variabele <strong><em>lamp</em></strong> dan gelijk is aan de waarde van <strong><em>lamp<em>green</em>1st</em></strong> is het eerste <em>herhaal tot:</em> blokje klaar en wacht het programma 2 seconden. Hierna zien we bijna dezelfde instructies die ervoor zorgen dan de lichten in omgekeerde volgorde gaan branden totdat het rode licht brandt.</p>
+
+<p><img src="./img/task_4_2.png" alt="task_4_2.sb2"></p>
+
+<h3 id="toc_27">task_4_2.sb2 Voorbeeld 2</h3>
+
+<p>In voorbeeld 1 van opdracht 4 zit twee keer bijna dezelfde instructies. Ze doen bijna hetzelfde, en laten de lichten van het stoplicht een voor een branden. Het eerste <strong><em>herhaal tot:</em></strong> stuk laat de lichten van rood naar groen gaan, in het tweede <strong><em>herhaal tot:</em></strong>  worden de lampen in de omgekeerder volgorde aan en uit gezet. </p>
+
+<p>Iemand die programmeert probeert te voorkomen dat hetzelfde stukje programma meer keren voor komt. Dit kan door slimmer te programmeren. Dit voorbeeld werkt hetzelfde als voorbeeld 1, alleen zorgt hetzelfde stuk programma ervoor dat de lichten van rood naar groen gaan en andersom. Er is een variabele <strong><em>getal</em></strong> gebruikt welke de waarde 1 bij de variabele getal opteld of er 1 vanaf haalt.</p>
+
+<p><img src="./img/task_4_3.png" alt="task_4_3.sb2"></p>
+
+<h2 id="toc_28">Opdracht 5 twee verkeerslichten die samenwerken</h2>
+
+<h3 id="toc_29">task_5_1.sb2 Voorbeeld 1</h3>
+
+<p>Dit is een voorbeeld van hoe je twee verkeerslichten samen kunt laten werken. Bij dit programma blijft een stoplicht ook langer op groen staan als er auto&#39;s langs het verkeerslicht blijven rijden. Dit is bijvoorbeeld handig als het verkeerslicht op een drukke straat staat. Dan hoeft het verkeerslicht niet steeds op groen te springen, maar blijft het even groen als er meerdere autos aan komen rijden.</p>
+
+<p>Wat gebeurt er in dit programma ? Op de regels <strong><em>01</em></strong> en <strong><em>02</em></strong> worden beide verkeerslichten op rood gezet. Zo weten we altijd wat de beginstand is als we het programma starten. Het programma blijft zich altijd herhalen door de instructue <strong><em>herhaal voor altijd</em></strong> op regel <strong><em>03</em></strong>. Op regel <strong><em>04</em></strong> zie je een instructie die we nog niet eerder gebruikt hebben, <strong><em>wacht tot</em></strong>. Hier wordt gewacht totdat of <strong><em>sensor_1</em></strong> of <strong><em>sensor_2</em></strong> <strong><em>HOOG</em></strong> wordt. Als de volgende instructie wordt uitgevoerd weten we dat één van de twee sensors <strong><em>HOOG</em></strong> is. Daarom weten we dat als op regel <strong><em>05</em></strong> sensor<em>1 niet hoog is, sensor</em>2 hoog is. Op regel <strong><em>06</em></strong> en <strong><em>07</em></strong> zetten we de waarde van de sensor welke <strong><em>HOOG</em></strong> is in de variabele <strong><em>stoplicht</em></strong>. De variabele <strong><em>lamp</em></strong> krijgt op regel <strong><em>08</em></strong> de waarde van variabele <strong><em>stoplicht</em></strong>. De variabele <strong><em>lamp</em></strong> wordt verder in het programma gebruikt om aan te geven welk licht van een verkeerslicht brandt. Op regel *<strong><em>09</em></strong> zie je weer een <strong><em>herhaal tot</em></strong> instructie. Deze instructie zorgt ervoor dat de instructies in <strong><em>herhaal tot</em></strong> zitten herhaald worden totdat het verkeerslicht weer op rood staat. 
+Op regel <strong><em>10</em></strong> wordt de waarde van variabele <strong><em>lamp</em></strong> met één verlaagd. Als een auto voor het verkeerslicht van <strong><em>1st Street</em></strong> staat. Wordt de eerste keer dat dit in de <strong><em>herhaal tot</em></strong> gebeurt wordt de waarde van <strong><em>lamp</em></strong> gelijk aan de waarde van variabele <strong><em>stoplicht</em></strong> - 1, dus 4. Op poort <strong><em>D4</em></strong> van de arduino zit het groene licht van het verkeerslicht aangesloten. Op regel <strong><em>11</em></strong>, <strong><em>12</em></strong> en <strong><em>13</em></strong> worden de lichten van het verkeerslicht uit gezet, het één van de lichten weer aan gezet. Zo brandt er altijd maar één licht op een verkeerslicht. Op regel <strong><em>15</em></strong> staat een <strong><em>als</em></strong> instructie, deze is waar als het groene licht van het verkeerslicht brandt. Regels <strong><em>16</em></strong> tot en met <strong><em>22</em></strong> zorgen ervoor dat het verkeerslicht langer op groen blijft staan als er autos het verkeerslicht blijven passeren. 
+Op regel <strong><em>16</em></strong> krijgt de variabele <strong><em>teller</em></strong> de waarde 1. Op regel <strong><em>17</em></strong> staat weer een <strong><em>herhaal tot</em></strong> welke blijft herhalen totdat de waarde van variabele <strong><em>teller</em></strong> groter is dan 5. Met de instructie <strong><em>reset timer</em></strong> op regel <strong><em>18</em></strong> wordt er een klokje gestart. Dan wacht het programma op regel <strong><em>19</em></strong> weer tot het alarm van het klokje na 5 seconden afgaat of er weer een auto voorbij het verkeerslicht rijdt. Op regel <strong><em>20</em></strong> kijkt het programma of de reden dat het programma verder is gegaan omdat er een auto langs kwam òf dat het alarm was afgegaan. Als het alarm was afgegaan wordt er bij de variabele <strong><em>teller</em></strong> 3 opgeteld, anders 1. Door deze optelling zal de waarde van variabele <strong><em>teller</em></strong> op regel <strong><em>17</em></strong> sneller groter zijn dan 5 als er geen auto langs het verkeerslicht gaat. Als de variabele <strong><em>teller</em></strong> groter is dan 5 gaat het programma, na op regel <strong><em>23</em></strong> twee seconden te wachten, weer terug naar regel <strong><em>10</em></strong>. Het verkeerslicht zal nu op oranje springen. Als het verkeerslicht op oranje of rood springt worden de regels <strong><em>15</em></strong> tot en met <strong><em>22</em></strong> niet meer uitgevoerd. Deze regels zorgen ervoor dat het licht dat brandt langer groen blijft, dit willen we alleen als het licht al op groen staat. </p>
+
+<p><img src="./img/task_5_1.png" alt="task_5_1.sb2"></p>
+
+<h1 id="toc_30">Geavanceerde opdracht</h1>
+
+<h2 id="toc_31">De sensor</h2>
+
+<p>De melders van de verkeerslichten zijn aangesloten op poort 5 en 9 van de Arduino. Als het signaal niet duidelijk hoog (5 Volt) of laag (0 volt) wordt gemaakt zal bij het lezen een willekeurige waarde worden gelezen. Je kunt dit zien door het programma <strong><em>task_A1_PullUpDown.sb2</em></strong> te laden.</p>
+
+<p><img src="./img/task_A1_PullUpDown.png" alt=""></p>
+
+<p>Op de arduino zit een aansluiting met het label <strong><em>GND</em></strong>. Hier zitten 4 draadjes op aangesloten, twee van deze draden gaan naar het stoplicht op 1st. Street de andere twee naar 2nd. Street. Maak de twee draadjes welke naar 1st street gaan voorzichtig los van de Arduino.</p>
+
+<p>Start nu het programma. Wat gebeurt er nu ? Je zult zien dat de pandabeer willeurig zal denken dat het Signaal LAAG of HOOG is. Dit komt omdat er overal om ons heen kleine electrische signaaltjes zijn welke worden opgevangen door het draadje dat van de melder naar aansluiting D5 op de arduino is aangesloten. Soms leest de Arduino deze kleine signaaltjes en denkt dan dat het signaal hoog is ook al is er geen auto boven de sensor. Als je de draadjes welke je net losgemaakt hebt weer vastmaakt zul je zien dat de pandabeer alleen maar denk dat het signaal LAAG is.</p>
+
+<p>Hoe komt dit ? Kijk eens naar het onderstaande plaatje, dit noemen we een schema. Op het schema staat de arduino getekend als een blokje met alle aansluitpunten. Ook zie je hier het reed relais met het label <strong><em>S1</em></strong> en het led, <strong><em>LED1</em></strong>. De symbooltjes <strong><em>R1</em></strong> en <strong><em>R2</em></strong> zijn weerstanden, deze zorgen electriciteit meer of minder door een draadje kan stromen. Het is moeilijk om je voor te stellen wat een weerstand precies doet, maar stel het electriciteitsdraadje eens voor als een tuinslang. Het water dat door de tuinslang loopt is de electriciteit. Als je nu in de tuinslang knijpt, gaat het water er minder hard door stromen. Hoe harder je knijpt, hoe hoger de weerstand, des te minder water stroomt er door de tuinslang. Met electriciteit is het precies hetzelfde, hoe groter de waarde van de weerstand des te moeilijker stroomt de electriciteit er door het draadje</p>
+
+<p><img src="./img/reed_switch_wiring.png" alt=""></p>
+
+<p>Op de onderstaande foto kun je zien waar de weerstanden, het ledje en reed relais in de weg zitten. Probeer deze componenten en de verbindingen te volgen en kijk of je deze in het schema kunt vinden.</p>
+
+<p><img src="./img/task_A1_sensor.png" alt=""></p>
+
+<p>Als er geen auto bij het stoplicht staat maakt het reed relais <strong><em>S1</em></strong> geen verbinding. Het signaal van 5 volt of het signaal HOOG komt niet aan bij poort <strong><em>D5</em></strong> omdat de schakelaar nog open staat.</p>
+
+<p><img src="./img/reed_switch_wiring_5V_0.png" alt=""></p>
+
+<p>Het draadje vanaf poort D5 is verbonden met een weerstand, de weerstand is weer verbonden met <strong><em>GND</em></strong>. Deze weerstand noemen we een pull-down weerstand. Dit heet zo omdat de weerstand het signaal naar beneden trekt omdat deze is verbonden met <strong><em>GND</em></strong>. De afkorting van <strong><em>GND</em></strong> komt van aarde en kun je vergelijken met de <strong><em>-</em></strong> op een batterij. Als je het weer vergelijkt met het voorbeeld met de tuinslang kun je <strong><em>GND</em></strong> vergelijken met het afvoerputje. Electriciteit stroomt dus van <strong><em>+</em></strong> naar <strong><em>-</em></strong> of <strong><em>GND</em></strong>. Als er nu een klein signaaltje op het draadje van D5 komt, wordt deze afgevoerd naar <strong><em>GND</em></strong>, zo blijft het signaal op D5 <strong><em>LAAG</em></strong>.</p>
+
+<p><img src="./img/reed_switch_wiring_gnd.png" alt=""></p>
+
+<p>Maar als de sensor nu wel een auto ziet, dan zou op <strong><em>D5</em></strong> toch ook het signaal op D5 <strong><em>LAAG</em></strong> zijn door de pull down weerstand ? Nee en dat zit zo; Als het reed relais verbinding maakt dan kan er veel stroom (een <strong><em>HOOG</em></strong> signaal) stromen van <strong><em>+</em></strong> (5 volt) naar <strong><em>GND</em></strong>. Alleen zitten er op de weg naar <strong><em>GND</em></strong> nog twee weerstanden. Deze weerstanden zijn groot, er wordt dus hard op de tuinslang gedrukt, zodat de electriciteit niet zo makkelijk weg kan stromen. Hierdoor blijft het signaal voor de weerstanden <strong><em>HOOG</em></strong>. Omdat de weerstand <strong><em>R2</em></strong> die tussen <strong><em>LED1</em></strong> en <strong><em>GND</em></strong> groter is stroomt de meeste electriciteit door <strong><em>LED1</em></strong> en gaat deze branden als er een auto op de sensor staat.</p>
+
+<p><img src="./img/reed_switch_wiring_connected.png" alt=""></p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+
+</body>
+
+</html>
